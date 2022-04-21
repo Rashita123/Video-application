@@ -17,9 +17,6 @@ const Login = () => {
 }
 const App = () => {
   const { isLoggedIn, setIsLoggedIn } = useAuthContext();
-  useEffect(()=>{
-    console.log({isLoggedIn});
-  },[])
   const [ resp, setResp ] = useState("");
   // useEffect(() => {
   //   axios.get("http://localhost:3000/")
@@ -37,9 +34,10 @@ const App = () => {
     <div className="App" class="flex">
       <Sidebar/>
       <Routes>
-        <Route path='/' element={<PrivateRoute/>}>
+        {/* <Route path='/' element={<PrivateRoute/>}>
           <Route path="" element={<Videos/>}/>  
-        </Route>
+        </Route> */}
+        <Route path="/" element={<Videos/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>
     </div>
