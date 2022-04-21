@@ -8,7 +8,10 @@ export const AuthContextProvider = ({ children }) => {
     const [ isLoggedIn, setIsLoggedIn ] = useState(false);
     useEffect(()=>{
         if(isLoggedIn){
+            console.log("isloggednin changes", isLoggedIn);
             const { from } = location.state || { from: { pathname: "/" } }
+            console.log(from, "when isloggedin changes");
+
             navigate(from);
         }   
     },[isLoggedIn])
