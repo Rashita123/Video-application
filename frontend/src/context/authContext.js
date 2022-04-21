@@ -10,8 +10,7 @@ export const AuthContextProvider = ({ children }) => {
         if(isLoggedIn){
             const { from } = location.state || { from: { pathname: "/" } }
             navigate(from);
-        }
-        
+        }   
     },[isLoggedIn])
     
     return <authContext.Provider value={{isLoggedIn, setIsLoggedIn}}>

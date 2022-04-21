@@ -3,7 +3,6 @@ import axios from 'axios';
 export const getVideos = (setVideos) => {
   axios.get("http://localhost:3000/api/videos")
     .then(res => {
-      console.log("data", res.data.videos);
       setVideos(res.data.videos);
    })
    .catch((error) => console.log(error))
